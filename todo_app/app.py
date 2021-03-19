@@ -25,7 +25,6 @@ def Move_InTrello():
     item = request.form.get('id')
     move_card(item)
     return redirect('/')
-    
 
 if __name__ == '__main__':
     app.run(debug=True)

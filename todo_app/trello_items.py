@@ -1,17 +1,17 @@
 import os
 import requests
 import json
+from todo_app.Item import Item
 
 # Get environment variables
 TRELLOAPIKEY = os.getenv('TRELLOAPIKEY')
 TRELLOAPITOKEN = os.environ.get('TRELLOAPITOKEN')
 TODOID='6048d81adf46ed3c0e396169'
 DOING='6048d81adf46ed3c0e39616a'
+DONE='6048d81adf46ed3c0e39616b'
+
 def Get_items_from_trello():
-    print(TRELLOAPIKEY)
-    print(TRELLOAPITOKEN)
-
-
+   
     #url = 'https://api.trello.com/1/members/me/boards'
 
     url = "https://api.trello.com/1/boards/6048d81adf46ed3c0e396168/cards"
@@ -36,8 +36,11 @@ def Get_items_from_trello():
             card['status']='DOING'
 
 
-
-    return response
+    idList=[]
+    for card in response:
+        idList.append(Item(card['id'],card['name'],card['status'],card['idList']))
+        
+    return idList
 
 def create_card(name_of_card):
     url = "https://api.trello.com/1/cards"
