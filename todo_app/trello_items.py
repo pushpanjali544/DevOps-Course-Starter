@@ -16,9 +16,6 @@ def Get_trello_APITODOID():
 def Get_trello_APIDOING():
     return os.getenv('DOING')
 
-def Get_trello_APIDONE():
-    return os.getenv('DONE')
-
 def Get_items_from_trello():
    
     #url = 'https://api.trello.com/1/members/me/boards'
@@ -86,7 +83,7 @@ def move_card(id):
     )
 
 def create_trello_board():
-    url = "https://api.trello.com/1/boards/"
+    url = "https://api.trello.com/1/boards/?"
     query = {
     'key': Get_trello_APIkey(),
     'token':Get_trello_APIToken(),
@@ -97,6 +94,11 @@ def create_trello_board():
     url,
     params=query
     )
+    board_id=response.json()['id']
+    lists = requests.get(f'https://api.trello.com/1/boards/{board_id}/lists', params={'key': Get_trello_APIkey(),'token':Get_trello_APIToken()}).json()
+    todo_id=lists[0]['id']
+    doing_id=lists[1]['id']
+    return board_id,todo_id,doing_id
 
 def delete_trello_board(board_id):
     url = f"https://api.trello.com/1/boards/{board_id}"

@@ -9,8 +9,11 @@ from todo_app.trello_items import create_trello_board,delete_trello_board
 @pytest.fixture(scope='module')
 def app_with_temp_board():
     # Create the new board & update the board id environment variable
-    board_id = create_trello_board()
-    #os.environ['TRELLO_BOARD_ID'] = board_id
+    board_id,todo_id,doing_id = create_trello_board()
+    os.environ['BOARDID'] = board_id
+    os.environ['DOING'] = doing_id
+    os.environ['TODOID'] = todo_id
+    
     # construct the new application
     application = create_app()
     # start the app in its own thread.

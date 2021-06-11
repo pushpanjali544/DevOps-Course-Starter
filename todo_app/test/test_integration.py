@@ -20,12 +20,12 @@ def test_index_page(mock_get_requests, client):
  # Replace call to requests.get(url) with our own function
     mock_get_requests.side_effect = mock_get_lists
     response = client.get('/')
-
+    assert response.status_code==200
 def mock_get_lists(Method ,url, params):
     if url ==  f"https://api.trello.com/1/boards/{os.getenv('BOARDID')}/cards":
         response = Mock()
 # sample_trello_lists_response should point to some test response data
-        sample_trello_lists_response=[{'id':'abcd','name':'test','idlist':'fakeTODO'}]
+        sample_trello_lists_response=[{'id':'abcd','name':'test','idList':'fakeTODO'}]
         response.json.return_value = sample_trello_lists_response
         return response
     return None

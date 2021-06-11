@@ -3,10 +3,11 @@ from todo_app.view_model import ViewModel
 from todo_app.Item import Item
 
 def test_todo_items():
-    items=[Item(1,'test','TODO',22)]
+    items=[Item(1,'test','TODO',22),Item(2,'failstatus','DOING',25)]
     item_view_model=ViewModel(items)
-    item_view_model.todo_items
-    assert len(item_view_model.todo_items) ==1  
+    result=item_view_model.todo_items
+    assert len(result) ==1
+    assert result[0].id==1
 
 def test_doing_items():
     items=[Item(1,'test','DOING',22)]
