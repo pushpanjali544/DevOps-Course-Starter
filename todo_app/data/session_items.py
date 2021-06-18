@@ -30,7 +30,7 @@ def get_item(id):
     return next((item for item in items if item['id'] == int(id)), None)
 
 
-def add_item(item):
+def add_item(title):
     """
     Adds a new item with the specified title to the session.
 
