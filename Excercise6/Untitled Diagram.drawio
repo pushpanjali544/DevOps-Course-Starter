@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-08-09T08:23:57.767Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36" etag="qqpMXZA_JTibe4qNWGu9" version="14.9.2" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-08-10T16:59:04.351Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36" etag="gFE2PTAwx18fi5XP-GY9" version="14.9.5" type="github" pages="3">
   <diagram id="o1LOkz2FEjWGKA7yduEX" name="Context">
-    <mxGraphModel dx="868" dy="393" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="868" dy="450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -85,22 +85,47 @@
       <root>
         <mxCell id="uJ1d91Cw7zrENgn4US1r-0" />
         <mxCell id="uJ1d91Cw7zrENgn4US1r-1" parent="uJ1d91Cw7zrENgn4US1r-0" />
-        <mxCell id="xQ4I76fzpIagHeqbRZkI-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="uJ1d91Cw7zrENgn4US1r-1" target="xQ4I76fzpIagHeqbRZkI-1" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="281.25" y="280" as="sourcePoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="xQ4I76fzpIagHeqbRZkI-1" value="Trello API" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="uJ1d91Cw7zrENgn4US1r-1" vertex="1">
-          <mxGeometry x="230" y="760" width="102.5" height="102.5" as="geometry" />
+          <mxGeometry x="350" y="760" width="102.5" height="102.5" as="geometry" />
         </mxCell>
-        <mxCell id="xQ4I76fzpIagHeqbRZkI-2" value="Template(HTML template, Flask Template),&lt;br&gt;Models( one box),&lt;br&gt;Trello Client,&lt;br&gt;Files to represent the flask,&lt;br&gt;Routes(app constructor),&lt;br&gt;config file" style="whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="uJ1d91Cw7zrENgn4US1r-1" vertex="1">
-          <mxGeometry x="150" y="270" width="330" height="330" as="geometry" />
+        <mxCell id="vhvX7mvamsQTvJqQqzlu-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="uJ1d91Cw7zrENgn4US1r-1" source="xQ4I76fzpIagHeqbRZkI-2" target="vhvX7mvamsQTvJqQqzlu-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vhvX7mvamsQTvJqQqzlu-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.05;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="uJ1d91Cw7zrENgn4US1r-1" source="xQ4I76fzpIagHeqbRZkI-2" target="vhvX7mvamsQTvJqQqzlu-0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xQ4I76fzpIagHeqbRZkI-2" value="Template" style="whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="uJ1d91Cw7zrENgn4US1r-1" vertex="1">
+          <mxGeometry x="275" y="350" width="260" height="260" as="geometry" />
         </mxCell>
         <mxCell id="xQ4I76fzpIagHeqbRZkI-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="uJ1d91Cw7zrENgn4US1r-1" source="xQ4I76fzpIagHeqbRZkI-4" target="xQ4I76fzpIagHeqbRZkI-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="xQ4I76fzpIagHeqbRZkI-4" value="Gunicorn" style="whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="uJ1d91Cw7zrENgn4US1r-1" vertex="1">
-          <mxGeometry x="275" y="110" width="80" height="80" as="geometry" />
+          <mxGeometry x="365" y="110" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vhvX7mvamsQTvJqQqzlu-0" value="HTML Template" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="uJ1d91Cw7zrENgn4US1r-1">
+          <mxGeometry x="30" y="430" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vhvX7mvamsQTvJqQqzlu-1" value="Model" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="uJ1d91Cw7zrENgn4US1r-1">
+          <mxGeometry x="747" y="440" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vhvX7mvamsQTvJqQqzlu-5" value="Uses Data to create" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="uJ1d91Cw7zrENgn4US1r-1">
+          <mxGeometry x="570" y="445" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vhvX7mvamsQTvJqQqzlu-12" value="Used for Designing" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="uJ1d91Cw7zrENgn4US1r-1">
+          <mxGeometry x="160" y="490" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="vcXXXJflXGDnZGxILQF0-0" value="Files&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="uJ1d91Cw7zrENgn4US1r-1">
+          <mxGeometry x="707" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vcXXXJflXGDnZGxILQF0-1" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="uJ1d91Cw7zrENgn4US1r-1" target="vcXXXJflXGDnZGxILQF0-0">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="535" y="420" as="sourcePoint" />
+            <mxPoint x="585" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vcXXXJflXGDnZGxILQF0-2" value="To represent the flask" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" vertex="1" parent="uJ1d91Cw7zrENgn4US1r-1">
+          <mxGeometry x="570" y="320" width="100" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
