@@ -26,11 +26,14 @@ def app_with_temp_board():
     thread.join(1)
     delete_trello_board(board_id)
 
-
-@pytest.fixture(scope="module")
+@pytest.fixture(scope='module')
 def driver():
- with webdriver.Firefox() as driver:
-    yield driver
+    opts = webdriver.ChromeOptions()
+    opts.add_argument('--headless')
+    opts.add_argument('--no-sandbox')
+    opts.add_argument('--disable-dev-shm-usage')
+    with webdriver.Chrome(options=opts) as driver:
+        yield driver
 
 def test_task_journey(driver, app_with_temp_board):
     driver.get('http://localhost:5000/')
@@ -40,5 +43,7 @@ def test_task_journey(driver, app_with_temp_board):
     card_submit=driver.find_element_by_name('submitnewitem')
     card_submit.click()
     assert driver.page_source.find('test')>0
+
+
 
 
