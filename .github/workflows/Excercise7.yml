@@ -1,0 +1,12 @@
+name: Continuous Integration
+on: [push]                      # Will make the workflow run every time you push to any branch
+
+jobs:
+  build:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: docker build --target test --tag todo_apptest .
+    - run: docker run --env-file .env.test todo_apptest todo_app/test
+    - run: docker run -e TRELLOAPIKEY=${{ secrets.TRELLOAPIKEY }} -e TRELLOAPITOKEN=${{ secrets.TRELLOAPITOKEN }} -e SECRET_KEY=${{ secrets.SECRET_KEY }} todo_apptest todo_app/end_to_end_test
