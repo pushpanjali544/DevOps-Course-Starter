@@ -8,5 +8,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: echo Hello Worl
-    - run: docker login --username admin4444555556666666 --password {{secrets.DockerPassword}}
     
+
