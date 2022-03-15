@@ -1,3 +1,3 @@
-bind = "0.0.0.0:5000"
+bind = f"0.0.0.0:{os.getenv('PORT')}"
 workers = 4
 timeout = 30
