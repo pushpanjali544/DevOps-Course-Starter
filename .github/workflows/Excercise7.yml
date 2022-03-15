@@ -13,7 +13,7 @@ jobs:
   build:
     name: Deploy
     needs: test
-    if: ${{ github.ref == 'refs/heads/master' }}
+    if: ${{ github.ref == 'refs/heads/Exercise_8' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
