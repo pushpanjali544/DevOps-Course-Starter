@@ -15,6 +15,7 @@ def Get_trello_APITODOID():
 
 def Get_trello_APIDOING():
     return os.getenv('DOING')
+    
 
 def Get_items_from_trello():
    

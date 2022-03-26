@@ -2,7 +2,7 @@ name: Continuous Integration
 on: [push]                      # Will make the workflow run every time you push to any branch
 
 jobs:
-  build:
+  test:
     name: Build and test
     runs-on: ubuntu-latest
     steps:
@@ -10,3 +10,22 @@ jobs:
     - run: docker build --target test --tag todo_apptest .
     - run: docker run --env-file .env.test todo_apptest todo_app/test
     - run: docker run -e TRELLOAPIKEY=${{ secrets.TRELLOAPIKEY }} -e TRELLOAPITOKEN=${{ secrets.TRELLOAPITOKEN }} -e SECRET_KEY=${{ secrets.SECRET_KEY }} todo_apptest todo_app/end_to_end_test
+  build:
+    name: Deploy
+    needs: test
+    if: ${{ github.ref == 'refs/heads/Exercise_8' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: docker login --username admin4444555556666666 --password ${{secrets.DockerPassword}}
+    - run:  docker build --target production --tag admin4444555556666666/workshop_module_8:latest .
+    - run: docker push admin4444555556666666/workshop_module_8:latest
+    - run: docker tag admin4444555556666666/workshop_module_8:latest registry.heroku.com/todoappdevopsacademy/web
+    - run: heroku container:login 
+    - run:  docker push registry.heroku.com/todoappdevopsacademy/web
+    - run:  heroku container:release -a todoappdevopsacademy web
+  
+    env: 
+     HEROKU_API_KEY: ${{ secrets.herokuapikey }} 
+
+    

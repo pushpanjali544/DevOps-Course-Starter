@@ -5,13 +5,13 @@ FROM python:3.9-slim-buster as base
 RUN pip install poetry 
 WORKDIR /app
 COPY pyproject.toml poetry.lock /app/
-RUN poetry install
+RUN poetry config virtualenvs.create false --local && poetry install 
 COPY . /app
 #ENV POETRY_HOME=/poetry
 #ENV PATH=${POETRY_HOME}/bin:${PATH}
 EXPOSE 5000
 FROM base as production
-ENTRYPOINT ["poetry", "run", "gunicorn", "--config", "gunicorn_config.py", "todo_app.app:create_app()"]
+CMD ["poetry", "run", "gunicorn", "--config", "gunicorn_config.py", "todo_app.app:create_app()"]
 
 
 FROM base as development
