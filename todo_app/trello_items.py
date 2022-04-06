@@ -20,7 +20,7 @@ def Get_trello_APIDOING():
     
 def Get_items_from_mongodb():
   client=pymongo.MongoClient(os.getenv('MONGODB')) 
-  db = client[os.getenv('MONGODBDATABASE')]
+  db = client[os.getenv('DATABASENAME')]
   collection = db.test_collection
   todoitemList=[]
   for todoitem in collection.find():
