@@ -3,19 +3,18 @@ import os
 from todo_app.app import create_app
 from threading import Thread
 from selenium import webdriver
-from todo_app.trello_items import create_trello_board,delete_trello_board
 
 
 @pytest.fixture(scope='module')
 def app_with_temp_board():
     # Create the new board & update the board id environment variable
     board_id,todo_id,doing_id = create_trello_board()
-    os.environ['BOARDID'] = board_id
-    os.environ['DOING'] = doing_id
-    os.environ['TODOID'] = todo_id
+    #os.environ['BOARDID'] = board_id
+    #os.environ['DOING'] = doing_id
+    #os.environ['TODOID'] = todo_id
     
     # construct the new application
-    application = create_app()
+    ##application = create_app()
     # start the app in its own thread.
     thread = Thread(target=lambda:
     application.run(use_reloader=False))
@@ -24,7 +23,7 @@ def app_with_temp_board():
     yield application
     # Tear Down
     thread.join(1)
-    delete_trello_board(board_id)
+    ##delete_trello_board(board_id)
 
 @pytest.fixture(scope='module')
 def driver():
