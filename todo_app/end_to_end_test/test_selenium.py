@@ -5,8 +5,8 @@ from threading import Thread
 from selenium import webdriver
 
 
-@pytest.fixture(scope='module')
-def app_with_temp_board():
+# @pytest.fixture(scope='module')
+# def app_with_temp_board():
     # Create the new board & update the board id environment variable
 #     board_id,todo_id,doing_id = create_trello_board()
 #     #os.environ['BOARDID'] = board_id
@@ -42,7 +42,3 @@ def app_with_temp_board():
 #     card_submit=driver.find_element_by_name('submitnewitem')
 #     card_submit.click()
 #     assert driver.page_source.find('test')>0
-
-
-
-
