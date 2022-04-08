@@ -14,16 +14,12 @@ def Get_MONGODATABASE():
 
 
 def create_app():
-    client = MongoClient(Get_MONGODB())
-    db=client[Get_MONGODATABASE()]
-    collection = db.test_collection
     app = Flask(__name__)
     # We specify the full path and remove the import for this config so
     # it loads the env variables when the app is created, rather than
     #when this file is imported
     app.config.from_object('todo_app.flask_config.Config')
     # All the routes and setup code etc
-    db = client.test_database
     @app.route('/')
     def index(): 
         items = Get_items_from_mongodb()
