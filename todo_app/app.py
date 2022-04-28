@@ -17,7 +17,7 @@ class User(UserMixin) :
            self.role='read_user'
 
 class AnonymousUser(AnonymousUserMixin):
-        role='anonymous_user'
+        role='write_user'
            
        
 

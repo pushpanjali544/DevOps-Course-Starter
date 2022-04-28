@@ -5,7 +5,7 @@ from threading import Thread
 from selenium import webdriver
 import pymongo
 
-
+LOGIN_DISABLED=True
 @pytest.fixture(scope='module')
 def app_with_temp_board():
     os.environ['DATABASENAME']='MONGODATABASE'
