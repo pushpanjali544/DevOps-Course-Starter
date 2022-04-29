@@ -4,6 +4,7 @@ from todo_app.app import create_app
 from threading import Thread
 from selenium import webdriver
 import pymongo
+import time
 
 LOGIN_DISABLED=True
 @pytest.fixture(scope='module')
@@ -33,6 +34,7 @@ def driver():
         yield driver
 
 def test_task_journey(driver, app_with_temp_board):
+    time.sleep(2)
     driver.get('http://localhost:5000/')
     assert driver.title == 'To-Do App'
     card_title = driver.find_element_by_name('additem')
