@@ -66,7 +66,7 @@ def create_app():
         username=''
         url = 'https://github.com/login/oauth/access_token'
         urluser='https://api.github.com/user'
-        myobj = {'client_id': 'b0c63e19e26853b4d122', 'client_secret':os.getenv('ClientSecret'),'code':code}
+        myobj = {'client_id':os.getenv('Client_ID'), 'client_secret':os.getenv('ClientSecret'),'code':code}
 
         accesstokenresponse = requests.post(url, data = myobj,headers={'Accept': 'application/json'})
         accesstoken=accesstokenresponse.json()['access_token']
