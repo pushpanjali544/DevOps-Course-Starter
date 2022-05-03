@@ -8,10 +8,13 @@
   </div>
 
   <div>
+    {% if role=='write_user' %}
     <form action="/" method="post">
       <input type="text" name="additem">
       <button type="submit" name="submitnewitem">submit</button>
+      
     </form>
+    {% endif %}
  </div>
 
   <div class="row">
@@ -21,10 +24,14 @@
         <!-- List the todo items here -->
         {% for item in view_model.items %}
           <li>{{item.id}} - {{item.status}}- {{item.name}}</li>
+          {% if role=='write_user' %}
           <form action="{{url_for('Move_InTrello')}}" method="post">
             <input type="text" name="id" value="{{item.id}}" hidden>  
+           
             <button type="submit">Update :</button>
+           
           </form>
+          {% endif %}
           {% endfor %}
       </ul>
     </div>
