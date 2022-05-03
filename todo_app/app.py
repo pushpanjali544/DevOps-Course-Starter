@@ -83,7 +83,7 @@ def create_app():
     login_manager.anonymous_user=AnonymousUser
     @login_manager.unauthorized_handler
     def unauthenticated():
-         return redirect('https://github.com/login/oauth/authorize?client_id=b0c63e19e26853b4d122') 
+         return redirect(f'https://github.com/login/oauth/authorize?client_id={os.getenv("Client_ID")}') 
          
     # Github OAuth flow when unauthenticated
     @login_manager.user_loader
