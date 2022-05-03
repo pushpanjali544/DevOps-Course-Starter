@@ -20,10 +20,7 @@ jobs:
     - run: docker login --username admin4444555556666666 --password ${{secrets.DockerPassword}}
     - run:  docker build --target production --tag admin4444555556666666/workshop_module_8:latest .
     - run: docker push admin4444555556666666/workshop_module_8:latest
-    - run: docker tag admin4444555556666666/workshop_module_8:latest registry.heroku.com/todoappdevopsacademy/web
-    - run: heroku container:login 
-    - run:  docker push registry.heroku.com/todoappdevopsacademy/web
-    - run:  heroku container:release -a todoappdevopsacademy web
+    - run: curl -dH -X POST ${{secrets.WEBHOOK}}
   
     env: 
      HEROKU_API_KEY: ${{ secrets.herokuapikey }} 
